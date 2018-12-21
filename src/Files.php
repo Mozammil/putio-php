@@ -174,8 +174,8 @@ class Files
     /**
      * Moves given file/folder
      *
-     * @param integer $id
-     * @param string $name
+     * @param array $file_ids
+     * @param int $parent_id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -449,7 +449,7 @@ class Files
      * Sets default video position for a video file.
      *
      * @param integer $id
-     * @param string $time
+     * @param integer $time in seconds
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *

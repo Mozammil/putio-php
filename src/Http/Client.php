@@ -61,7 +61,6 @@ class Client
      * Sends a POST Request
      *
      * @param string $uri
-     * @param array $query
      * @param array $options
      *
      * @return string JSON
