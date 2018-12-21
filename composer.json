@@ -1,0 +1,38 @@
+{
+    "name": "mozammil/putio",
+    "description": "PHP SDK for put.io",
+    "keywords": [
+        "mozammil",
+        "put.io"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mozammil Khodabacchas",
+            "email": "hello@moz.im"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mozammil\\Putio\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mozammil\\Putio\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
