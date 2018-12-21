@@ -5,8 +5,20 @@ use Mozammil\Putio\Http\Client;
 
 class Putio
 {
+    /**
+     * The Http client
+     *
+     * @var \Mozammil\Putio\Http\Client
+     */
     protected $client;
 
+    /**
+     * Initialises the HTTP client
+     *
+     * @param string $token
+     *
+     * @return void
+     */
     public function __construct(string $token)
     {
         $this->client = $this->client ?: new Client($token);

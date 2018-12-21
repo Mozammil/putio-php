@@ -8,7 +8,7 @@ class Feeds
     /**
      * The Http Client
      *
-     * @var Mozammil\Putio\Http\Client
+     * @var \Mozammil\Putio\Http\Client
      */
     protected $client;
 
