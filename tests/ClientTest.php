@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio\Test;
 
 use Mozammil\Putio\Http\Client;
@@ -17,15 +18,15 @@ class ClientTest extends TestCase
     {
         $response = $this->http->get('https://httpbin.org/user-agent');
 
-        $this->assertRegexp('/Guzzle/', json_decode($response)->{"user-agent"});
+        $this->assertRegexp('/Guzzle/', json_decode($response)->{'user-agent'});
     }
 
     public function test_it_can_make_a_post_request()
     {
         $response = $this->http->post('https://httpbin.org/anything', [
             'form_params' => [
-                'foo' => 'baz'
-            ]
+                'foo' => 'baz',
+            ],
         ]);
 
         $data = json_decode($response, true);

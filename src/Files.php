@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -7,7 +8,7 @@ use Mozammil\Putio\Exceptions\FileNotFoundException;
 class Files
 {
     /**
-     * The Http Client
+     * The Http Client.
      *
      * @var \Mozammil\Putio\Http\Client
      */
@@ -19,9 +20,9 @@ class Files
     }
 
     /**
-     * Get a list of files/folders within a parent folder
+     * Get a list of files/folders within a parent folder.
      *
-     * @param  integer $parent_id
+     * @param  int $parent_id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -36,13 +37,13 @@ class Files
 
     /**
      * Searches for a list of files/folders matching the keyword,
-     * path, type and extension
+     * path, type and extension.
      *
      * @param string $keyword
      * @param array $from
      * @param array $type
      * @param array $ext
-     * @param integer $page
+     * @param int $page
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -58,11 +59,11 @@ class Files
     }
 
     /**
-     * Uploads a file
+     * Uploads a file.
      *
      * @param string $file
      * @param string $filename
-     * @param integer $parent_id
+     * @param int $parent_id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -72,7 +73,7 @@ class Files
      */
     public function upload(string $file, string $filename = null, int $parent_id = 0)
     {
-        if(! realpath($file)) {
+        if (! realpath($file)) {
             throw new FileNotFoundException("File {$file} could not be found");
         }
 
@@ -83,14 +84,14 @@ class Files
                 [
                     'name' => 'file',
                     'filename' => $filename ?: basename($file),
-                    'contents' => realpath($file)
+                    'contents' => realpath($file),
                 ],
             ],
         ]);
     }
 
     /**
-     * Creates a folder
+     * Creates a folder.
      *
      * @param string $name
      * @param int $parent_id
@@ -106,7 +107,7 @@ class Files
         return $this->client->post('files/create-folder', [
             'form_params' => [
                 'name' => $name,
-                'parent_id' => $parent_id
+                'parent_id' => $parent_id,
             ],
         ]);
     }
@@ -114,7 +115,7 @@ class Files
     /**
      * Returns a file’s properties.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -128,7 +129,7 @@ class Files
     }
 
     /**
-     * Deletes a list of files/folders with the specified ids
+     * Deletes a list of files/folders with the specified ids.
      *
      * @param  array $file_ids
      *
@@ -144,15 +145,15 @@ class Files
 
         return $this->client->post('files/delete', [
             'form_params' => [
-                'file_ids' => $file_ids
-            ]
+                'file_ids' => $file_ids,
+            ],
         ]);
     }
 
     /**
-     * Renames given file/folder
+     * Renames given file/folder.
      *
-     * @param integer $id
+     * @param int $id
      * @param string $name
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -172,7 +173,7 @@ class Files
     }
 
     /**
-     * Moves given file/folder
+     * Moves given file/folder.
      *
      * @param array $file_ids
      * @param int $parent_id
@@ -194,9 +195,9 @@ class Files
     }
 
     /**
-     * Converts given file to mp4
+     * Converts given file to mp4.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -212,7 +213,7 @@ class Files
     /**
      * Returns the status of mp4 conversion of the given file.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -226,9 +227,9 @@ class Files
     }
 
     /**
-     * Donwloads a file from put.io locally
+     * Donwloads a file from put.io locally.
      *
-     * @param integer $id
+     * @param int $id
      * @param string $path
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -239,7 +240,7 @@ class Files
      */
     public function download(int $id, string $path, string $filename = null)
     {
-        if(! $filename) {
+        if (! $filename) {
             $response = $this->get($id);
             $filename = json_decode($response, true)['file']['name'];
         }
@@ -247,18 +248,18 @@ class Files
         $response = $this->client->get(sprintf('files/%d/url', $id));
         $download = json_decode($response, true)['url'];
 
-        if(! $download) {
+        if (! $download) {
             throw new FileNotFoundException('This file could not be found on the server');
         }
 
         return $this->client->get($download, [], [
             'sink' => "{$path}/{$filename}",
-            'allow_redirects' => false
+            'allow_redirects' => false,
         ]);
     }
 
     /**
-     * Share given files with friends
+     * Share given files with friends.
      *
      * @param array $file_ids
      * @param array $friends
@@ -297,7 +298,7 @@ class Files
      * Returns list of users file is shared with.
      * Each result item contains a share id which can be used for unsharing.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -311,9 +312,9 @@ class Files
     }
 
     /**
-     * Unshares given file from given friends or from everyone
+     * Unshares given file from given friends or from everyone.
      *
-     * @param integer $id
+     * @param int $id
      * @param array $friends
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -326,16 +327,16 @@ class Files
     {
         return $this->client->post(sprintf('files/%d/unshare', $id), [
             'form_params' => [
-                'shares' => count($friends) ? implode(',', $friends) : 'everyone'
-            ]
+                'shares' => count($friends) ? implode(',', $friends) : 'everyone',
+            ],
         ]);
     }
 
     /**
      * Lists available subtitles for user’s preferred language.
-     * User must select “Default Subtitle Language” from settings page
+     * User must select “Default Subtitle Language” from settings page.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -349,9 +350,9 @@ class Files
     }
 
     /**
-     * Downloads a subtitle
+     * Downloads a subtitle.
      *
-     * @param integer $id
+     * @param int $id
      * @param string $format
      * @param string $path
      * @param string $filename
@@ -365,14 +366,14 @@ class Files
      */
     public function downloadSubtitle(
         int $id,
-        string $format = 'srt',
+        string $format,
         string $path,
         string $filename = null,
         string $key = 'default'
     ) {
-        if(!$filename) {
+        if (! $filename) {
             $response = $this->get($id);
-            $filename = pathinfo(json_decode($response, true)['file']['name'], PATHINFO_FILENAME) . ".{$format}";
+            $filename = pathinfo(json_decode($response, true)['file']['name'], PATHINFO_FILENAME).".{$format}";
         }
 
         return $this->client->get(
@@ -380,7 +381,7 @@ class Files
             ['format' => $format],
             [
                 'sink' => "{$path}/{$filename}",
-                'allow_redirects' => false
+                'allow_redirects' => false,
             ]
         );
     }
@@ -388,7 +389,7 @@ class Files
     /**
      * Serves a HLS playlist for a video file.
      *
-     * @param integer $id
+     * @param int $id
      * @param string $path
      * @param string $filename
      * @param string $subtitle_key
@@ -401,7 +402,7 @@ class Files
      */
     public function hlsPlaylist(int $id, string $path, string $filename = null, string $subtitle_key = 'all')
     {
-        if (!$filename) {
+        if (! $filename) {
             $response = $this->get($id);
             $filename = pathinfo(json_decode($response, true)['file']['name'], PATHINFO_FILENAME);
         }
@@ -411,7 +412,7 @@ class Files
             ['subtitle_key' => $subtitle_key],
             [
                 'sink' => "{$path}/{$filename}.m3u8",
-                'allow_redirects' => false
+                'allow_redirects' => false,
             ]
         );
     }
@@ -448,8 +449,8 @@ class Files
     /**
      * Sets default video position for a video file.
      *
-     * @param integer $id
-     * @param integer $time in seconds
+     * @param int $id
+     * @param int $time in seconds
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -461,15 +462,15 @@ class Files
     {
         return $this->client->post(sprintf('files/%d/start-from', $id), [
             'form_params' => [
-                'time' => $time
-            ]
+                'time' => $time,
+            ],
         ]);
     }
 
     /**
      * Delete video position for a video file.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -483,7 +484,7 @@ class Files
     }
 
     /**
-     * Builds a search query
+     * Builds a search query.
      *
      * @param string $keyword
      * @param array $from
@@ -496,18 +497,18 @@ class Files
      */
     private function buildSearchQuery(string $keyword, array $from = [], array $type = [], array $ext = [])
     {
-        $query = '/' . rawurlencode($keyword);
+        $query = '/'.rawurlencode($keyword);
 
-        if(count($from)) {
-            $query .= ' from: "' . implode(',', $from) . '"';
+        if (count($from)) {
+            $query .= ' from: "'.implode(',', $from).'"';
         }
 
         if (count($type)) {
-            $query .= ' type:' . implode(',', $type);
+            $query .= ' type:'.implode(',', $type);
         }
 
         if (count($ext)) {
-            $query .= ' ext:' . implode(',', $ext);
+            $query .= ' ext:'.implode(',', $ext);
         }
 
         return $query;

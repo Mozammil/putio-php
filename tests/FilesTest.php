@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio\Test;
 
 use Mozammil\Putio\Files;
@@ -30,7 +31,7 @@ class FilesTest extends TestCase
         $stub->method('post')->willReturn('upload');
 
         $files = new Files($stub);
-        $this->assertEquals('upload', $files->upload(__DIR__ . '/FilesTest.php'));
+        $this->assertEquals('upload', $files->upload(__DIR__.'/FilesTest.php'));
     }
 
     public function test_files_create_folder()
@@ -57,7 +58,7 @@ class FilesTest extends TestCase
         $stub->method('post')->willReturn('delete');
 
         $files = new Files($stub);
-        $this->assertEquals('delete', $files->delete([1,2,3,4]));
+        $this->assertEquals('delete', $files->delete([1, 2, 3, 4]));
     }
 
     public function test_files_rename()
@@ -75,7 +76,7 @@ class FilesTest extends TestCase
         $stub->method('post')->willReturn('move');
 
         $files = new Files($stub);
-        $this->assertEquals('move', $files->move([1,2,3], 1));
+        $this->assertEquals('move', $files->move([1, 2, 3], 1));
     }
 
     public function test_files_convert_to_mp4()
@@ -99,14 +100,14 @@ class FilesTest extends TestCase
     public function test_files_download()
     {
         $response = json_encode([
-            'url' => 'Bar'
+            'url' => 'Bar',
         ]);
 
         $stub = $this->getMockBuilder('Mozammil\Putio\Http\Client')->disableOriginalConstructor()->getMock();
         $stub->method('get')->willReturn($response);
 
         $files = new Files($stub);
-        $this->assertEquals($response, $files->download(1, __DIR__ . '/Data', 'Video.mp4'));
+        $this->assertEquals($response, $files->download(1, __DIR__.'/Data', 'Video.mp4'));
     }
 
     public function test_files_share()
@@ -160,7 +161,7 @@ class FilesTest extends TestCase
         $stub->method('get')->willReturn('subtitles');
 
         $files = new Files($stub);
-        $this->assertEquals('subtitles', $files->downloadSubtitle(1, 'srt', __DIR__ . '/Data', 'Subtitle.srt'));
+        $this->assertEquals('subtitles', $files->downloadSubtitle(1, 'srt', __DIR__.'/Data', 'Subtitle.srt'));
     }
 
     public function test_files_hls_playlist()
@@ -169,7 +170,7 @@ class FilesTest extends TestCase
         $stub->method('get')->willReturn('hls_playlist');
 
         $files = new Files($stub);
-        $this->assertEquals('hls_playlist', $files->hlsPlaylist(1, __DIR__ . '/Data', 'media.m3u8'));
+        $this->assertEquals('hls_playlist', $files->hlsPlaylist(1, __DIR__.'/Data', 'media.m3u8'));
     }
 
     public function test_files_events()

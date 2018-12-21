@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -6,7 +7,7 @@ use Mozammil\Putio\Http\Client;
 class Transfers
 {
     /**
-     * The Http Client
+     * The Http Client.
      *
      * @var \Mozammil\Putio\Http\Client
      */
@@ -36,7 +37,7 @@ class Transfers
      * Adds a new transfer.
      *
      * @param string $url
-     * @param integer $save_parent_id
+     * @param int $save_parent_id
      * @param string $callback_url
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -51,7 +52,7 @@ class Transfers
             'form_params' => [
                 'url' => $url,
                 'save_parent_id' => $save_parent_id,
-                'callback_url' => $callback_url ? : ''
+                'callback_url' => $callback_url ?: '',
             ],
         ]);
     }
@@ -59,7 +60,7 @@ class Transfers
     /**
      * Returns a transfer’s properties.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -75,7 +76,7 @@ class Transfers
     /**
      * Retry previously failed transfer.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *

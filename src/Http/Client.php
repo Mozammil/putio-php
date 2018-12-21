@@ -1,10 +1,11 @@
 <?php
+
 namespace Mozammil\Putio\Http;
 
-use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\RequestInterface;
@@ -12,17 +13,17 @@ use Psr\Http\Message\RequestInterface;
 class Client
 {
     /**
-     * The API's base URI
+     * The API's base URI.
      */
     const URL = 'https://api.put.io/';
 
     /**
-     * The API's version
+     * The API's version.
      */
     const VERSION = 'v2';
 
     /**
-     * The HTTP client
+     * The HTTP client.
      *
      * @var \GuzzleHttp\Client
      */
@@ -30,17 +31,17 @@ class Client
 
     /**
      * Construct the HTTP client and passing the
-     * token for authorization
+     * token for authorization.
      *
      * @param string $token
      */
     public function __construct(string $token)
     {
-        $this->http = $this->http ? : $this->getHttpClient($token);
+        $this->http = $this->http ?: $this->getHttpClient($token);
     }
 
     /**
-     * Sends a GET Request
+     * Sends a GET Request.
      *
      * @param string $uri
      * @param array $query
@@ -50,7 +51,7 @@ class Client
      */
     public function get(string $uri, array $query = [], array $options = [])
     {
-        $uri = $uri .'?'. http_build_query($query);
+        $uri = $uri.'?'.http_build_query($query);
 
         $response = $this->http->request('GET', $uri, $options);
 
@@ -58,7 +59,7 @@ class Client
     }
 
     /**
-     * Sends a POST Request
+     * Sends a POST Request.
      *
      * @param string $uri
      * @param array $options
@@ -73,7 +74,7 @@ class Client
     }
 
     /**
-     * Constructs the HTTP client
+     * Constructs the HTTP client.
      *
      * @param string $token
      *
@@ -84,14 +85,14 @@ class Client
         $stack = $this->getHandlerStack($token);
 
         return new GuzzleClient([
-            'base_uri' => self::URL . self::VERSION . '/',
-            'handler' => $stack
+            'base_uri' => self::URL.self::VERSION.'/',
+            'handler' => $stack,
         ]);
     }
 
     /**
      * Creates Guzzle Handler stack
-     * Also appends the Oauth Token to every request
+     * Also appends the Oauth Token to every request.
      *
      * @param string $token
      *
@@ -101,7 +102,7 @@ class Client
     {
         $stack = HandlerStack::create(new CurlHandler());
 
-        $stack->push(Middleware::mapRequest(function (RequestInterface $request) use($token) {
+        $stack->push(Middleware::mapRequest(function (RequestInterface $request) use ($token) {
             return ! $this->containsAccessToken($request)
                 ? $request->withUri(Uri::withQueryValue($request->getUri(), 'oauth_token', $token))
                 : $request;
@@ -111,7 +112,7 @@ class Client
     }
 
     /**
-     * Checks if the request already contains an oauth_token
+     * Checks if the request already contains an oauth_token.
      *
      * @param \Psr\Http\Message\RequestInterface $request
      *
