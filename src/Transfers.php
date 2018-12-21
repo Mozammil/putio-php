@@ -25,7 +25,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#get--transfers-list
      *
-     * @return mixed
+     * @return string
      */
     public function list()
     {
@@ -43,7 +43,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#post--transfers-add
      *
-     * @return mixed
+     * @return string
      */
     public function add(string $url, int $save_parent_id = 0, string $callback_url = null)
     {
@@ -65,7 +65,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#get--transfers--id-
      *
-     * @return mixed
+     * @return string
      */
     public function get(int $id)
     {
@@ -81,7 +81,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#retry
      *
-     * @return mixed
+     * @return string
      */
     public function retry(int $id)
     {
@@ -99,7 +99,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#cancel
      *
-     * @return mixed
+     * @return string
      */
     public function cancel(array $transfer_ids = [])
     {
@@ -115,7 +115,7 @@ class Transfers
      *
      * @see https://api.put.io/v2/docs/transfers.html#clean
      *
-     * @return mixed
+     * @return string
      */
     public function clean()
     {

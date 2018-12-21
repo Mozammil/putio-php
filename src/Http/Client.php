@@ -78,7 +78,7 @@ class Client
      *
      * @param string $token
      *
-     * @return GuzzleHttp\Client
+     * @return \GuzzleHttp\Client
      */
     private function getHttpClient(string $token)
     {
@@ -96,7 +96,7 @@ class Client
      *
      * @param string $token
      *
-     * @return GuzzleHttp\HandlerStack $stack
+     * @return \GuzzleHttp\HandlerStack $stack
      */
     private function getHandlerStack(string $token)
     {

@@ -28,7 +28,7 @@ class Zips
      *
      * @see https://api.put.io/v2/docs/zips.html#post--zips-create
      *
-     * @return mixed
+     * @return string
      */
     public function create(array $file_ids = [])
     {
@@ -46,7 +46,7 @@ class Zips
      *
      * @see https://api.put.io/v2/docs/zips.html#get--zips-list
      *
-     * @return mixed
+     * @return string
      */
     public function list()
     {
@@ -67,7 +67,7 @@ class Zips
      *
      * @see https://api.put.io/v2/docs/zips.html#get-zip
      *
-     * @return mixed
+     * @return string
      */
     public function get(int $zip_id)
     {

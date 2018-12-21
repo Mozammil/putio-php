@@ -27,7 +27,7 @@ class Putio
     /**
      * Files instance
      *
-     * @return Mozammil\Putio\Files
+     * @return \Mozammil\Putio\Files
      */
     public function files()
     {
@@ -37,7 +37,7 @@ class Putio
     /**
      * Transfers instance
      *
-     * @return Mozammil\Putio\Transfers
+     * @return \Mozammil\Putio\Transfers
      */
     public function transfers()
     {
@@ -47,7 +47,7 @@ class Putio
     /**
      * Zips instance
      *
-     * @return Mozammil\Putio\Zips
+     * @return \Mozammil\Putio\Zips
      */
     public function zips()
     {
@@ -57,7 +57,7 @@ class Putio
     /**
      * Feeds instance
      *
-     * @return Mozammil\Putio\Feeds
+     * @return \Mozammil\Putio\Feeds
      */
     public function feeds()
     {
@@ -67,7 +67,7 @@ class Putio
     /**
      * Friends instance
      *
-     * @return Mozammil\Putio\Friends
+     * @return \Mozammil\Putio\Friends
      */
     public function friends()
     {
@@ -77,7 +77,7 @@ class Putio
     /**
      * Account instance
      *
-     * @return Mozammil\Putio\Account
+     * @return \Mozammil\Putio\Account
      */
     public function account()
     {

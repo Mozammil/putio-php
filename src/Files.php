@@ -27,7 +27,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#list
      *
-     * @return mixed
+     * @return string
      */
     public function list(int $parent_id = 0)
     {
@@ -48,7 +48,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#search
      *
-     * @return mixed
+     * @return string
      */
     public function search(string $keyword, array $from = [], array $type = [], array $ext = [], int $page = 1)
     {
@@ -68,7 +68,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#upload
      *
-     * @return mixed
+     * @return string
      */
     public function upload(string $file, string $filename = null, int $parent_id = 0)
     {
@@ -99,7 +99,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#create-folder
      *
-     * @return mixed
+     * @return string
      */
     public function createFolder(string $name, int $parent_id = 0)
     {
@@ -120,7 +120,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#get
      *
-     * @return mixed
+     * @return string
      */
     public function get(int $id)
     {
@@ -136,7 +136,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#delete
      *
-     * @return mixed
+     * @return string
      */
     public function delete(array $file_ids = [])
     {
@@ -159,7 +159,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#rename
      *
-     * @return mixed
+     * @return string
      */
     public function rename(int $id, string $name)
     {
@@ -181,7 +181,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#move
      *
-     * @return mixed
+     * @return string
      */
     public function move(array $file_ids = [], int $parent_id = 0)
     {
@@ -202,7 +202,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#convert-to-mp4
      *
-     * @return mixed
+     * @return string
      */
     public function convertToMp4(int $id)
     {
@@ -218,7 +218,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#get-mp4-status
      *
-     * @return mixed
+     * @return string
      */
     public function getMp4Status(int $id)
     {
@@ -235,7 +235,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#download
      *
-     * @return mixed
+     * @return string
      */
     public function download(int $id, string $path, string $filename = null)
     {
@@ -267,7 +267,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#sharing
      *
-     * @return mixed
+     * @return string
      */
     public function share(array $file_ids = [], array $friends = [])
     {
@@ -286,7 +286,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#get--files-shared
      *
-     * @return mixed
+     * @return string
      */
     public function shared()
     {
@@ -303,7 +303,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#get--files--id--shared-with
      *
-     * @return mixed
+     * @return string
      */
     public function sharedWith(int $id)
     {
@@ -320,7 +320,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#post--files--id--unshare
      *
-     * @return mixed
+     * @return string
      */
     public function unshare(int $id, array $friends = [])
     {
@@ -341,7 +341,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#subtitles
      *
-     * @return mixed
+     * @return string
      */
     public function subtitles(int $id)
     {
@@ -361,7 +361,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#download-subtitle
      *
-     * @return mixed
+     * @return string
      */
     public function downloadSubtitle(
         int $id,
@@ -397,7 +397,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#hls-playlist
      *
-     * @return mixed
+     * @return string
      */
     public function hlsPlaylist(int $id, string $path, string $filename = null, string $subtitle_key = 'all')
     {
@@ -423,7 +423,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#get--events-list
      *
-     * @return mixed
+     * @return string
      */
     public function events()
     {
@@ -438,7 +438,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#post--events-delete
      *
-     * @return mixed
+     * @return string
      */
     public function deleteEvents()
     {
@@ -455,7 +455,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#set-video-position
      *
-     * @return mixed
+     * @return string
      */
     public function setVideoPosition(int $id, int $time)
     {
@@ -475,7 +475,7 @@ class Files
      *
      * @see https://api.put.io/v2/docs/files.html#delete-video-position
      *
-     * @return mixed
+     * @return string
      */
     public function deleteVideoPosition(int $id)
     {

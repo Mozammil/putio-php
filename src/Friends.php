@@ -24,7 +24,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#get--friends-list
      *
-     * @return mixed
+     * @return string
      */
     public function list()
     {
@@ -38,7 +38,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#get--friends-waiting-requests
      *
-     * @return mixed
+     * @return string
      */
     public function requests()
     {
@@ -54,7 +54,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#send-request
      *
-     * @return mixed
+     * @return string
      */
     public function sendRequest(string $username)
     {
@@ -70,7 +70,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#approve
      *
-     * @return mixed
+     * @return string
      */
     public function approveRequest(string $username)
     {
@@ -86,7 +86,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#post--friends--username--deny
      *
-     * @return mixed
+     * @return string
      */
     public function denyRequest(string $username)
     {
@@ -104,7 +104,7 @@ class Friends
      *
      * @see https://api.put.io/v2/docs/friends.html#unfriend
      *
-     * @return mixed
+     * @return string
      */
     public function unfriend(string $username)
     {

@@ -33,7 +33,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#post--rss-create
      *
-     * @return mixed
+     * @return string
      */
     public function create(
         string $title,
@@ -66,7 +66,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#get--rss-list
      *
-     * @return mixed
+     * @return string
      */
     public function list()
     {
@@ -82,7 +82,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#get--rss-list
      *
-     * @return mixed
+     * @return string
      */
     public function get(int $id)
     {
@@ -106,7 +106,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#update
      *
-     * @return mixed
+     * @return string
      */
     public function update(
         int $id,
@@ -142,7 +142,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#post--rss--feed_id--pause
      *
-     * @return mixed
+     * @return string
      */
     public function pause(int $id)
     {
@@ -158,7 +158,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#post--rss--feed_id--resume
      *
-     * @return mixed
+     * @return string
      */
     public function resume(int $id)
     {
@@ -174,7 +174,7 @@ class Feeds
      *
      * @see https://api.put.io/v2/docs/feeds.html#post--rss--feed_id--delete
      *
-     * @return mixed
+     * @return string
      */
     public function delete(int $id)
     {

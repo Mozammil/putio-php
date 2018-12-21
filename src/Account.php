@@ -25,7 +25,7 @@ class Account
      *
      * @see https://api.put.io/v2/docs/account.html#get--account-info
      *
-     * @return mixed
+     * @return string
      */
     public function info()
     {
@@ -39,7 +39,7 @@ class Account
      *
      * @see https://api.put.io/v2/docs/account.html#get--account-settings
      *
-     * @return mixed
+     * @return string
      */
     public function settings()
     {
@@ -57,7 +57,7 @@ class Account
      *
      * @see https://api.put.io/v2/docs/account.html#post--account-settings
      *
-     * @return mixed
+     * @return string
      */
     public function update(
         int $default_download_folder = null,
