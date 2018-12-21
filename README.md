@@ -1,5 +1,11 @@
 # putio-php
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/Mozammil/putio-php.svg?style=flat-square)](https://packagist.org/packages/Mozammil/putio-php)
+[![Build Status](https://img.shields.io/travis/Mozammil/putio-php/master.svg?style=flat-square)](https://travis-ci.org/Mozammil/putio-php)
+[![Quality Score](https://img.shields.io/scrutinizer/g/Mozammil/putio-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/Mozammil/putio-php)
+[![StyleCI](https://styleci.io/repos/51363080/shield?branch=master)](https://styleci.io/repos/51363080)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 PHP bindings to [Put.io](https://put.io)'s API.
 
 ## Install
@@ -41,7 +47,7 @@ $ composer test
 
 ## Security
 
-If you discover any security related issues, please email [hello@moz.im](hello@moz.im) instead of using the issue tracker.
+If you discover any security related issues, please email [hello@moz.im](mailto:hello@moz.im) instead of using the issue tracker.
 
 ## Credits
 
