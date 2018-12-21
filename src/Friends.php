@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -6,7 +7,7 @@ use Mozammil\Putio\Http\Client;
 class Friends
 {
     /**
-     * The Http Client
+     * The Http Client.
      *
      * @var \Mozammil\Putio\Http\Client
      */

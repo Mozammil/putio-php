@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -6,7 +7,7 @@ use Mozammil\Putio\Http\Client;
 class Feeds
 {
     /**
-     * The Http Client
+     * The Http Client.
      *
      * @var \Mozammil\Putio\Http\Client
      */
@@ -22,12 +23,12 @@ class Feeds
      *
      * @param string $title Title of the RSS feed as will appear on the site
      * @param string $rss_source_url The URL of the RSS feed to be watched
-     * @param integer $parent_dir_id The file ID of the folder to place the RSS feed files in
-     * @param boolean $delete_old_files Should old files in the folder be deleted when space is low
-     * @param boolean $dont_process_whole_feed Should the current items in the feed, at creation time, be ignored
+     * @param int $parent_dir_id The file ID of the folder to place the RSS feed files in
+     * @param bool $delete_old_files Should old files in the folder be deleted when space is low
+     * @param bool $dont_process_whole_feed Should the current items in the feed, at creation time, be ignored
      * @param array $keywords Only items with titles that contain any of these words will be transferred
      * @param array $unwanted_keywords No items with titles that contain any of these words will be transferred
-     * @param boolean $paused Should the RSS feed be created in the paused state
+     * @param bool $paused Should the RSS feed be created in the paused state
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -52,9 +53,9 @@ class Feeds
                 'parent_dir_id' => $parent_dir_id,
                 'delete_old_files' => $delete_old_files,
                 'dont_process_whole_feed' => $dont_process_whole_feed,
-                'keywords' => count ($keywords) ? implode(',', $keywords) : null,
+                'keywords' => count($keywords) ? implode(',', $keywords) : null,
                 'unwanted_keywords' => count($unwanted_keywords) ? implode(',', $unwanted_keywords) : null,
-                'paused' => $paused
+                'paused' => $paused,
             ],
         ]);
     }
@@ -76,7 +77,7 @@ class Feeds
     /**
      * Gives detailed information about the given feed id.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -95,12 +96,12 @@ class Feeds
      * @param int $id Id of the RSS feed to be updated
      * @param string $title Title of the RSS feed as will appear on the site
      * @param string $rss_source_url The URL of the RSS feed to be watched
-     * @param integer $parent_dir_id The file ID of the folder to place the RSS feed files in
-     * @param boolean $delete_old_files Should old files in the folder be deleted when space is low
-     * @param boolean $dont_process_whole_feed Should the current items in the feed, at creation time, be ignored
+     * @param int $parent_dir_id The file ID of the folder to place the RSS feed files in
+     * @param bool $delete_old_files Should old files in the folder be deleted when space is low
+     * @param bool $dont_process_whole_feed Should the current items in the feed, at creation time, be ignored
      * @param array $keywords Only items with titles that contain any of these words will be transferred
      * @param array $unwanted_keywords No items with titles that contain any of these words will be transferred
-     * @param boolean $paused Should the RSS feed be created in the paused state
+     * @param bool $paused Should the RSS feed be created in the paused state
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -118,7 +119,7 @@ class Feeds
         array $keywords = [],
         array $unwanted_keywords = [],
         bool $paused = false
-    ){
+    ) {
         return $this->client->post(sprintf('rss/%d', $id), [
             'form_params' => [
                 'title' => $title,
@@ -128,7 +129,7 @@ class Feeds
                 'dont_process_whole_feed' => $dont_process_whole_feed,
                 'keywords' => count($keywords) ? implode(',', $keywords) : null,
                 'unwanted_keywords' => count($unwanted_keywords) ? implode(',', $unwanted_keywords) : null,
-                'paused' => $paused
+                'paused' => $paused,
             ],
         ]);
     }
@@ -136,7 +137,7 @@ class Feeds
     /**
      * Pauses the RSS feed, so that it is not polled for new items anymore.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -152,7 +153,7 @@ class Feeds
     /**
      * Resumes the RSS feed, so that it starts being polled for new items again.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -168,7 +169,7 @@ class Feeds
     /**
      * Deletes given RSS feed.
      *
-     * @param integer $id
+     * @param int $id
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *

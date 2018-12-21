@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio\Test;
 
 use Mozammil\Putio\Feeds;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -6,14 +7,14 @@ use Mozammil\Putio\Http\Client;
 class Putio
 {
     /**
-     * The Http client
+     * The Http client.
      *
      * @var \Mozammil\Putio\Http\Client
      */
     protected $client;
 
     /**
-     * Initialises the HTTP client
+     * Initialises the HTTP client.
      *
      * @param string $token
      *
@@ -25,7 +26,7 @@ class Putio
     }
 
     /**
-     * Files instance
+     * Files instance.
      *
      * @return \Mozammil\Putio\Files
      */
@@ -35,7 +36,7 @@ class Putio
     }
 
     /**
-     * Transfers instance
+     * Transfers instance.
      *
      * @return \Mozammil\Putio\Transfers
      */
@@ -45,7 +46,7 @@ class Putio
     }
 
     /**
-     * Zips instance
+     * Zips instance.
      *
      * @return \Mozammil\Putio\Zips
      */
@@ -55,7 +56,7 @@ class Putio
     }
 
     /**
-     * Feeds instance
+     * Feeds instance.
      *
      * @return \Mozammil\Putio\Feeds
      */
@@ -65,7 +66,7 @@ class Putio
     }
 
     /**
-     * Friends instance
+     * Friends instance.
      *
      * @return \Mozammil\Putio\Friends
      */
@@ -75,7 +76,7 @@ class Putio
     }
 
     /**
-     * Account instance
+     * Account instance.
      *
      * @return \Mozammil\Putio\Account
      */

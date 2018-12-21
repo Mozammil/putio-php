@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio\Exceptions;
 
 use Exception;

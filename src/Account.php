@@ -1,4 +1,5 @@
 <?php
+
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
@@ -6,7 +7,7 @@ use Mozammil\Putio\Http\Client;
 class Account
 {
     /**
-     * The Http Client
+     * The Http Client.
      *
      * @var \Mozammil\Putio\Http\Client
      */
@@ -33,7 +34,7 @@ class Account
     }
 
     /**
-     * User preferences
+     * User preferences.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
@@ -49,8 +50,8 @@ class Account
     /**
      * Updates user preferences. Only sent parameters are updated.
      *
-     * @param integer $default_download_folder
-     * @param boolean $is_invisible
+     * @param int $default_download_folder
+     * @param bool $is_invisible
      * @param array $subtitle_languages
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -66,7 +67,7 @@ class Account
     ) {
         $params = [];
 
-        if($default_download_folder) {
+        if ($default_download_folder) {
             $params['default_download_folder'] = $default_download_folder;
         }
 
@@ -79,7 +80,7 @@ class Account
         }
 
         return $this->client->post('account/settings', [
-            'form_params' => $params
+            'form_params' => $params,
         ]);
     }
 }
