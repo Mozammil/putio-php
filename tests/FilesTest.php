@@ -2,8 +2,8 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Endpoints\Files;
 use PHPUnit\Framework\TestCase;
+use Mozammil\Putio\Endpoints\Files;
 
 class FilesTest extends TestCase
 {
