@@ -2,8 +2,8 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Endpoints\Feeds;
 use PHPUnit\Framework\TestCase;
+use Mozammil\Putio\Endpoints\Feeds;
 
 class FeedsTest extends TestCase
 {
