@@ -2,13 +2,13 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Zips;
-use Mozammil\Putio\Feeds;
-use Mozammil\Putio\Files;
 use Mozammil\Putio\Putio;
-use Mozammil\Putio\Account;
-use Mozammil\Putio\Friends;
-use Mozammil\Putio\Transfers;
+use Mozammil\Putio\Endpoints\Zips;
+use Mozammil\Putio\Endpoints\Feeds;
+use Mozammil\Putio\Endpoints\Files;
+use Mozammil\Putio\Endpoints\Account;
+use Mozammil\Putio\Endpoints\Friends;
+use Mozammil\Putio\Endpoints\Transfers;
 use PHPUnit\Framework\TestCase;
 
 class PutioTest extends TestCase

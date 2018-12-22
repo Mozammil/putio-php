@@ -2,7 +2,7 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Friends;
+use Mozammil\Putio\Endpoints\Friends;
 use PHPUnit\Framework\TestCase;
 
 class FriendsTest extends TestCase

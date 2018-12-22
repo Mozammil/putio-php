@@ -3,6 +3,12 @@
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
+use Mozammil\Putio\Endpoints\Files;
+use Mozammil\Putio\Endpoints\Transfers;
+use Mozammil\Putio\Endpoints\Zips;
+use Mozammil\Putio\Endpoints\Feeds;
+use Mozammil\Putio\Endpoints\Friends;
+use Mozammil\Putio\Endpoints\Account;
 
 class Putio
 {
@@ -28,7 +34,7 @@ class Putio
     /**
      * Files instance.
      *
-     * @return \Mozammil\Putio\Files
+     * @return \Mozammil\Putio\Endpoints\Files
      */
     public function files()
     {
@@ -38,7 +44,7 @@ class Putio
     /**
      * Transfers instance.
      *
-     * @return \Mozammil\Putio\Transfers
+     * @return \Mozammil\Putio\Endpoints\Transfers
      */
     public function transfers()
     {
@@ -48,7 +54,7 @@ class Putio
     /**
      * Zips instance.
      *
-     * @return \Mozammil\Putio\Zips
+     * @return \Mozammil\Putio\Endpoints\Zips
      */
     public function zips()
     {
@@ -68,7 +74,7 @@ class Putio
     /**
      * Friends instance.
      *
-     * @return \Mozammil\Putio\Friends
+     * @return \Mozammil\Putio\Endpoints\Friends
      */
     public function friends()
     {
@@ -78,7 +84,7 @@ class Putio
     /**
      * Account instance.
      *
-     * @return \Mozammil\Putio\Account
+     * @return \Mozammil\Putio\Endpoints\Account
      */
     public function account()
     {

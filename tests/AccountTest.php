@@ -2,7 +2,7 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Account;
+use Mozammil\Putio\Endpoints\Account;
 use PHPUnit\Framework\TestCase;
 
 class AccountTest extends TestCase

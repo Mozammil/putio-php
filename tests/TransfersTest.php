@@ -2,7 +2,7 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Transfers;
+use Mozammil\Putio\Endpoints\Transfers;
 use PHPUnit\Framework\TestCase;
 
 class TransfersTest extends TestCase

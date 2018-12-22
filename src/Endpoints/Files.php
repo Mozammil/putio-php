@@ -1,6 +1,6 @@
 <?php
 
-namespace Mozammil\Putio;
+namespace Mozammil\Putio\Endpoints;
 
 use Mozammil\Putio\Http\Client;
 use Mozammil\Putio\Exceptions\FileNotFoundException;
@@ -32,7 +32,7 @@ class Files
      */
     public function list(int $parent_id = 0)
     {
-        return $this->client->get('files/list', ['parent_id' => $parent_id]);
+        return $this->client->get('files/list', compact('parent_id'));
     }
 
     /**
@@ -105,10 +105,7 @@ class Files
     public function createFolder(string $name, int $parent_id = 0)
     {
         return $this->client->post('files/create-folder', [
-            'form_params' => [
-                'name' => $name,
-                'parent_id' => $parent_id,
-            ],
+            'form_params' => compact('name', 'parent_id'),
         ]);
     }
 
@@ -144,16 +141,14 @@ class Files
         $file_ids = implode(',', $file_ids);
 
         return $this->client->post('files/delete', [
-            'form_params' => [
-                'file_ids' => $file_ids,
-            ],
+            'form_params' => compact('file_ids')
         ]);
     }
 
     /**
      * Renames given file/folder.
      *
-     * @param int $id
+     * @param int $file_id
      * @param string $name
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -162,13 +157,10 @@ class Files
      *
      * @return string
      */
-    public function rename(int $id, string $name)
+    public function rename(int $file_id, string $name)
     {
         return $this->client->post('files/rename', [
-            'form_params' => [
-                'file_id' => $id,
-                'name' => $name,
-            ],
+            'form_params' => compact('file_id', 'name')
         ]);
     }
 
@@ -186,11 +178,10 @@ class Files
      */
     public function move(array $file_ids = [], int $parent_id = 0)
     {
+        $file_ids = implode(',', $file_ids);
+
         return $this->client->post('files/move', [
-            'form_params' => [
-                'file_ids' => implode(',', $file_ids),
-                'parent_id' => $parent_id,
-            ],
+            'form_params' => compact('file_ids', 'parent_id')
         ]);
     }
 
@@ -461,9 +452,7 @@ class Files
     public function setVideoPosition(int $id, int $time)
     {
         return $this->client->post(sprintf('files/%d/start-from', $id), [
-            'form_params' => [
-                'time' => $time,
-            ],
+            'form_params' => compact('time')
         ]);
     }
 

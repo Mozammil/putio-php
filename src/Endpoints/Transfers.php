@@ -1,6 +1,6 @@
 <?php
 
-namespace Mozammil\Putio;
+namespace Mozammil\Putio\Endpoints;
 
 use Mozammil\Putio\Http\Client;
 
@@ -46,14 +46,10 @@ class Transfers
      *
      * @return string
      */
-    public function add(string $url, int $save_parent_id = 0, string $callback_url = null)
+    public function add(string $url, int $save_parent_id = 0, string $callback_url = '')
     {
         return $this->client->post('transfers/add', [
-            'form_params' => [
-                'url' => $url,
-                'save_parent_id' => $save_parent_id,
-                'callback_url' => $callback_url ?: '',
-            ],
+            'form_params' => compact('url', 'save_parent_id', 'callback_url'),
         ]);
     }
 
@@ -87,7 +83,7 @@ class Transfers
     public function retry(int $id)
     {
         return $this->client->post('transfers/retry', [
-            'form_params' => ['id' => $id],
+            'form_params' => compact('id'),
         ]);
     }
 

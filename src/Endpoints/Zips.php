@@ -1,6 +1,6 @@
 <?php
 
-namespace Mozammil\Putio;
+namespace Mozammil\Putio\Endpoints;
 
 use Mozammil\Putio\Http\Client;
 
