@@ -18,7 +18,7 @@ $ composer require mozammil/putio-php
 
 ## Access Token
 
-This library assumes you already have an access token. If you don't, please read [this article](https://api.put.io/v2/docs/gettingstarted.html#authentication-and-access) on how to get one.
+This library assumes that you already have an access token. If you don't, please read [this article](https://api.put.io/v2/docs/gettingstarted.html#authentication-and-access) on how to get one.
 
 In case you are using the API for your own purposes, you can skip the steps mentioned in the article and [register an application](https://app.put.io/settings/account/oauth/apps/new) to get your own personal access token.
 
