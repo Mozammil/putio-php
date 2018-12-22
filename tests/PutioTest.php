@@ -3,13 +3,13 @@
 namespace Mozammil\Putio\Test;
 
 use Mozammil\Putio\Putio;
+use PHPUnit\Framework\TestCase;
 use Mozammil\Putio\Endpoints\Zips;
 use Mozammil\Putio\Endpoints\Feeds;
 use Mozammil\Putio\Endpoints\Files;
 use Mozammil\Putio\Endpoints\Account;
 use Mozammil\Putio\Endpoints\Friends;
 use Mozammil\Putio\Endpoints\Transfers;
-use PHPUnit\Framework\TestCase;
 
 class PutioTest extends TestCase
 {

@@ -3,12 +3,12 @@
 namespace Mozammil\Putio;
 
 use Mozammil\Putio\Http\Client;
-use Mozammil\Putio\Endpoints\Files;
-use Mozammil\Putio\Endpoints\Transfers;
 use Mozammil\Putio\Endpoints\Zips;
 use Mozammil\Putio\Endpoints\Feeds;
-use Mozammil\Putio\Endpoints\Friends;
+use Mozammil\Putio\Endpoints\Files;
 use Mozammil\Putio\Endpoints\Account;
+use Mozammil\Putio\Endpoints\Friends;
+use Mozammil\Putio\Endpoints\Transfers;
 
 class Putio
 {

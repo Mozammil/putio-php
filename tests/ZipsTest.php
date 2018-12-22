@@ -2,8 +2,8 @@
 
 namespace Mozammil\Putio\Test;
 
-use Mozammil\Putio\Endpoints\Zips;
 use PHPUnit\Framework\TestCase;
+use Mozammil\Putio\Endpoints\Zips;
 
 class ZipsTest extends TestCase
 {
