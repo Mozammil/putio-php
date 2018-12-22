@@ -64,7 +64,7 @@ class Putio
     /**
      * Feeds instance.
      *
-     * @return \Mozammil\Putio\Feeds
+     * @return \Mozammil\Putio\Endpoints\Feeds
      */
     public function feeds()
     {
