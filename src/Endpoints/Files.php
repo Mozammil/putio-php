@@ -141,7 +141,7 @@ class Files
         $file_ids = implode(',', $file_ids);
 
         return $this->client->post('files/delete', [
-            'form_params' => compact('file_ids')
+            'form_params' => compact('file_ids'),
         ]);
     }
 
@@ -160,7 +160,7 @@ class Files
     public function rename(int $file_id, string $name)
     {
         return $this->client->post('files/rename', [
-            'form_params' => compact('file_id', 'name')
+            'form_params' => compact('file_id', 'name'),
         ]);
     }
 
@@ -181,7 +181,7 @@ class Files
         $file_ids = implode(',', $file_ids);
 
         return $this->client->post('files/move', [
-            'form_params' => compact('file_ids', 'parent_id')
+            'form_params' => compact('file_ids', 'parent_id'),
         ]);
     }
 
@@ -242,7 +242,7 @@ class Files
         if (! $download) {
             throw new FileNotFoundException('This file could not be found on the server');
         }
-
+        
         $url = parse_url($download);
         $uri = sprintf('%s://%s%s', $url['scheme'], $url['host'], $url['path']);
         parse_str($url['query'], $params);
@@ -456,7 +456,7 @@ class Files
     public function setVideoPosition(int $id, int $time)
     {
         return $this->client->post(sprintf('files/%d/start-from', $id), [
-            'form_params' => compact('time')
+            'form_params' => compact('time'),
         ]);
     }
 
