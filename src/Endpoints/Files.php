@@ -242,12 +242,8 @@ class Files
         if (! $download) {
             throw new FileNotFoundException('This file could not be found on the server');
         }
-        
-        $url = parse_url($download);
-        $uri = sprintf('%s://%s%s', $url['scheme'], $url['host'], $url['path']);
-        parse_str($url['query'], $params);
-
-        return $this->client->get($uri, $params, [
+       
+        return $this->client->get($download, [], [
             'sink' => "{$path}/{$filename}",
             'allow_redirects' => false,
         ]);
