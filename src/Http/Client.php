@@ -51,8 +51,7 @@ class Client
      */
     public function get(string $uri, array $query = [], array $options = [])
     {
-        $uri = $uri.'?'.http_build_query($query);
-
+        $uri = $uri . ($query !== [] ? '?'.http_build_query($query) : '');
         $response = $this->http->request('GET', $uri, $options);
 
         return (string) $response->getBody()->getContents();
